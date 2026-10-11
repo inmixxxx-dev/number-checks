@@ -32,7 +32,9 @@ jobs:
           gradle-version: '8.9'
 
       - name: Generate project
-        run: python3 create_project.py
+        run: |
+          python3 create_project.py
+          python3 update_project.py
 
       - name: Build APK
         run: gradle --no-daemon assembleDebug
